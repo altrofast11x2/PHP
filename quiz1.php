@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>PHP 연습</title>
+  <title>PHP 퀴즈 세트 1</title>
 </head>
 
 <body>

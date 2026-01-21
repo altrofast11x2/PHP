@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>PHP 퀴즈 세트 ②</title>
+  <title>PHP 퀴즈 세트 2</title>
 </head>
 
 <body>
@@ -11,20 +11,16 @@
   <?php
   /* =====================
    문제 1
-   point 값에 따라
-   90 이상: A
-   80 이상: B
-   그 외: C
-   <span> 태그로 출력
+   변수 $num 이 짝수면
+   <p>짝수</p>
+   홀수면
+   <p>홀수</p>
 ===================== */
-
-  $point = 85;
-  if ($point >= 90) {
-    echo "A";
-  } else if ($point >= 80) {
-    echo "B";
+  $num = 7;
+  if ($num % 2 == 0) {
+    echo "<p>짝수</p>";
   } else {
-    echo "C";
+    echo "<p>홀수</p>";
   }
   // TODO
   ?>
@@ -34,47 +30,61 @@
   <?php
   /* =====================
    문제 2
-   나이가 20 이상인 회원만 출력
-   출력 형식:
-   <p>이름 (나이)</p>
+   숫자 배열이 주어진다.
+   10 이상인 숫자만
+   <li>로 출력
 ===================== */
 
-  $users = [
-    ["name" => "철수", "age" => 17],
-    ["name" => "영희", "age" => 22],
-    ["name" => "민수", "age" => 20]
-  ];
-
-  // TODO
+  $numbers = [3, 10, 25, 7, 12];
   ?>
+
+  <ul>
+    <?php
+    // TODO
+    foreach ($numbers as $num) {
+      if ($num >= 10) {
+        echo "<li> (" . $num . ") </li>";
+      }
+    }
+    ?>
+  </ul>
 
   <hr>
 
   <?php
   /* =====================
    문제 3
-   GET으로 page 받기
-   값 없으면 1
-   출력: 현재 페이지: X
+   상품 목록 출력
+   출력 형식:
+   <p>상품명 - 가격원</p>
 ===================== */
 
+  $products = [
+    ["name" => "키보드", "price" => 30000],
+    ["name" => "마우스", "price" => 15000],
+    ["name" => "모니터", "price" => 200000]
+  ];
   // TODO
+  foreach ($products as $product) {
+    echo "<p>" . $product['name'] . " " . $product['price'] . "원" . "</p>";
+  }
   ?>
-
   <hr>
 
   <?php
   /* =====================
    문제 4
-   로그인 상태에 따라 버튼 출력
-   true  -> 로그아웃
-   false -> 로그인
+   GET으로 mode 받기
+   값이 "dark" 면
+   <p>다크모드</p>
+   아니면
+   <p>라이트모드</p>
 ===================== */
-
-  $isLogin = false;
-  if ($isLogin) {
+  if ($_GET['mode'] ?? 0) {
+    echo "<p> 다크모드 </p>";
+  } else {
+    echo "<p> 라이트모드 </p>";
   }
-
   // TODO
   ?>
 
@@ -83,21 +93,20 @@
   <?php
   /* =====================
    문제 5
-   아래 코드의 문제점 2가지 설명
+   로그인 상태에 따라
+   메시지 출력
+   true  -> <p>환영합니다</p>
+   false -> <p>로그인이 필요합니다</p>
 ===================== */
+
+  $isLogin = true;
+  if ($isLogin) {
+    echo "<p>환영합니다</p>";
+  } else {
+    echo "<p>로그인이 필요합니다.</p>";
+  }
+  // TODO
   ?>
-
-  <pre>
-<?php
-$nums = [10, 20, 30];
-
-foreach ($nums as $nums) {
-  if ($nums > 15)
-    echo "<p>" . $nums . "</p>";
-}
-?>
-<!-- 위에 foreach ($nums as $nums) 에서 배열 : 값인데 배열과 값을 똑같이 씀. 결과는 뜨긴 뜨는데 다음에 쓸때 오류가 뜰 확률이 높아 다른 이름으로 써야한다.  -->
-</pre>
 
 </body>
 
