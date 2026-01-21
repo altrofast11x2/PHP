@@ -8,15 +8,7 @@
 </head>
 
 <body>
-  <?php
-  $id = $_GET['id'] ?? 'welcome';
-  ?>
-
-  <ul>
-    <li style="color: <?= $id === 'html' ? 'red' : 'black' ?>">HTML</li>
-    <li style="color: <?= $id === 'css' ? 'red' : 'black' ?>">CSS</li>
-  </ul>
-
+  TEST
 </body>
 
 </html>
