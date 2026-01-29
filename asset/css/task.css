@@ -1,0 +1,31 @@
+body { font-family: 'Apple SD Gothic Neo', sans-serif; background: #e9ecef; padding: 40px; }
+.container { max-width: 800px; margin: 0 auto; background: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
+h1 { margin-top: 0; color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 15px; display: flex; justify-content: space-between; align-items: center; }
+
+/* 테이블 스타일 */
+table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+th { background: #f8f9fa; color: #495057; font-weight: 600; text-align: left; padding: 15px; border-bottom: 2px solid #dee2e6; }
+td { padding: 15px; border-bottom: 1px solid #dee2e6; color: #444; }
+tr:hover { background-color: #f1f3f5; }
+a { text-decoration: none; color: inherit; }
+
+/* 버튼 스타일 */
+.btn { padding: 8px 16px; border-radius: 6px; color: white; font-size: 14px; font-weight: bold; border: none; cursor: pointer; transition: 0.2s; display: inline-block; }
+.btn-primary { background: #3498db; }
+.btn-danger { background: #e74c3c; }
+.btn-secondary { background: #95a5a6; }
+.btn-write { float: right; font-size: 14px; }
+
+/* 폼 스타일 */
+.form-group { margin-bottom: 20px; }
+.form-group label { display: block; margin-bottom: 8px; font-weight: bold; color: #34495e; }
+.form-control { width: 100%; padding: 12px; border: 1px solid #ced4da; border-radius: 6px; font-size: 16px; box-sizing: border-box; }
+textarea.form-control { height: 200px; resize: vertical; }
+
+/* 상세페이지 스타일 */
+.view-header { border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 20px; }
+.view-info { color: #888; font-size: 14px; margin-top: 5px; }
+.view-content { min-height: 200px; line-height: 1.6; color: #333; white-space: pre-wrap; }
+.view-actions { margin-top: 30px; border-top: 1px solid #eee; padding-top: 20px; text-align: right; }
+/* 아무 내용이 없을때 표시되는것 */
+.nothing h2{text-align: center;margin: 250px 0;}
