@@ -29,3 +29,7 @@ textarea.form-control { height: 200px; resize: vertical; }
 .view-actions { margin-top: 30px; border-top: 1px solid #eee; padding-top: 20px; text-align: right; }
 /* 아무 내용이 없을때 표시되는것 */
 .nothing h2{text-align: center;margin: 250px 0;}
+/* 페이지 버튼 스타일 추가 */
+.pagination {text-align: center;margin-top: 20px;}
+.pagination a {display: inline-block;padding: 5px 10px;margin: 0 2px;border: 1px solid #ddd;color: #333;text-decoration: none;border-radius: 3px;}
+.pagination a.active {background-color: #333;color: #fff;}

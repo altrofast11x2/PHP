@@ -2,19 +2,7 @@
 require_once "db.php";
 $id = $_GET['id'];
 $sql = DB::fetchAll("SELECT * FROM tasks WHERE id = $id");
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $writer = $_POST['writer'] ?? '';
-    $subject = $_POST['subject'] ?? '';
-    $message = $_POST['message'] ?? '';
-    if (empty($writer) || empty($subject) || empty($message)) {
-        echo "<script>alert('내용을 적어주세요.');history.back();</script>";
-        exit;
-    } else {
-        DB::exec("INSERT INTO tasks (id,subject,writer,message,status,created_at) VALUES ('','$subject','$writer','$message','',now());");
-        echo "<script>alert('업로드 성공!');location.href='index.php';</script>";
-        exit;
-    }
-}
+DB::exec("UPDATE tasks SET status = status + 1 where id = '$id'");
 ?>
 <!DOCTYPE html>
 <html lang="ko">
@@ -31,8 +19,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <div class="view-header">
                 <h2 style="margin:0;"><?= $data['writer']; ?></h2>
                 <div class="view-info">
-                    <span>담당자: <?= $data['writer']; ?></span> |
+                    <span>담당자: <?= $data['writer']; ?> </span> |
                     <span><?= $data['created_at']; ?></span>
+                    <span>조회수<?= $data['status']; ?></span>
                 </div>
             </div>
 
